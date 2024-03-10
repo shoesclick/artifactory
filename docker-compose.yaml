@@ -1,0 +1,35 @@
+services:
+  db-shoes-click:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+  mq-order:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_management
+    ports:
+      - 5672:5672 # (erlang) communication between the nodes and CLI tool
+      - 15672:15672 # communication with the web management API
+    volumes:
+      - /docker_conf/rabbitmq/data/:/var/lib/rabbitmq/
+    environment:
+      RABBITMQ_DEFAULT_USER: 'admin'
+      RABBITMQ_DEFAULT_PASS: 'passw123'
+    restart: always
+    depends_on:
+      - db-shoes-click
+
+volumes:
+  logs-folder:
+    name: ${log_rabbitmq_management}
+    driver: local
+  my-db:

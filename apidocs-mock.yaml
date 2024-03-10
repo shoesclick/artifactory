@@ -1,0 +1,145 @@
+openapi: 3.0.2
+info:
+  title: api--payment-gateyay-mock
+  version: 1.0.0
+  description: Especificação para simular uma api de Pagamento
+paths:
+  /gateway/card/transation:
+    summary: Efetua a transação do cartão
+    description: Efetua transaçao de cartão
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CardResponse'
+          description: SUCESSO
+  /gateway/bank/slip/generate:
+    summary: Gera uma Chave Pix
+    description: Gera o Boleto bancario
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankSlipRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankSlipResponse'
+          description: SUCESSO
+  /gateway/pix/generate:
+    summary: Gera uma Chave Pix
+    description: Gera uma Chave Pix
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PixRequest'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PixResponse'
+          description: SUCESSO
+components:
+  schemas:
+    CardResponse:
+      title: Root Type for CardResponse
+      description: ''
+      type: object
+      properties:
+        status:
+          type: string
+        transactionId:
+          type: string
+        transactionDate:
+          format: date-time
+          type: string
+      example:
+        status: APPROVED
+        transactionId: '3324234234'
+        transactionDate: '07-03-2024 01:40:13.322'
+    BankSlipResponse:
+      title: Root Type for BankSlipPayment
+      description: ''
+      type: object
+      properties:
+        codeBar:
+          type: string
+        base64:
+          description: ''
+          type: string
+      example:
+        codeBar: '2342342342342342342342342343242342342342342342423'
+        base64: >-
+          rtretretertewrtrtertreterwtrewtertertretretretretrtretretretretretretertretretretertretretretretertretertretretertretertertretertretretertreter
+    CardRequest:
+      title: Root Type for CardRequest
+      description: ''
+      type: object
+      properties:
+        number:
+          type: string
+        name:
+          type: string
+        code:
+          type: string
+        expirationDate:
+          format: date-time
+          type: string
+        value:
+          format: double
+          description: ''
+          type: number
+      example:
+        number: '34324242342342344'
+        name: NOME PESSOA
+        code: '123'
+        expirationDate: '2024-02-12 12:00:00.000'
+    BankSlipRequest:
+      title: Root Type for BankSlipRequest
+      description: ''
+      type: object
+      properties:
+        value:
+          format: double
+          type: number
+        cedente:
+          type: string
+        vencimento:
+          format: date
+          type: string
+      example:
+        value: 22.22
+        cedente: SHOES CLICK
+        vencimento: '2022-04-03'
+    PixRequest:
+      title: Root Type for PixRequest
+      description: ''
+      type: object
+      properties:
+        value:
+          format: double
+          type: number
+      example:
+        value: 22.22
+    PixResponse:
+      title: Root Type for PixResponse
+      description: ''
+      type: object
+      properties:
+        keyCode:
+          type: string
+      example:
+        keyCode: 2.3423423423423426e+71
