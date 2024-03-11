@@ -1,4 +1,9 @@
 services:
+  redis-shoes-click:
+    image: redis
+    command: redis-server --requirepass Redis2019!
+    ports:
+        - "6379:6379"
   db-shoes-click:
     image: mysql:5.7
     restart: always
@@ -13,6 +18,8 @@ services:
       - '3306'
     volumes:
       - my-db:/var/lib/mysql
+    depends_on:
+      - redis-shoes-click
   mq-order:
     image: rabbitmq:3-management
     container_name: rabbitmq_management
