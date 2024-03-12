@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "b66e9a66-894b-406f-9582-31719e2c4283",
-		"name": "Shoes.click",
+		"_postman_id": "28c00785-d673-49ec-912a-3d93e3575c54",
+		"name": "Shoes.click - STACK",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17710409"
 	},
@@ -15,13 +15,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/customer/1",
-							"protocol": "http",
+							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/1",
 							"host": [
-								"localhost"
+								"{{urlApiCustomer}}"
 							],
-							"port": "8081",
 							"path": [
+								"api--constomer",
 								"api",
 								"customer",
 								"1"
@@ -36,13 +35,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/customer/1",
-							"protocol": "http",
+							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/1",
 							"host": [
-								"localhost"
+								"{{urlApiCustomer}}"
 							],
-							"port": "8081",
 							"path": [
+								"api--constomer",
 								"api",
 								"customer",
 								"1"
@@ -57,13 +55,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8081/api/customer/list",
-							"protocol": "http",
+							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/list",
 							"host": [
-								"localhost"
+								"{{urlApiCustomer}}"
 							],
-							"port": "8081",
 							"path": [
+								"api--constomer",
 								"api",
 								"customer",
 								"list"
@@ -87,13 +84,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/customer/list",
-							"protocol": "http",
+							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/list",
 							"host": [
-								"localhost"
+								"{{urlApiCustomer}}"
 							],
-							"port": "8081",
 							"path": [
+								"api--constomer",
 								"api",
 								"customer",
 								"list"
@@ -117,13 +113,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8081/api/customer/save",
-							"protocol": "http",
+							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/save",
 							"host": [
-								"localhost"
+								"{{urlApiCustomer}}"
 							],
-							"port": "8081",
 							"path": [
+								"api--constomer",
 								"api",
 								"customer",
 								"save"
@@ -143,13 +138,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/product/1",
-							"protocol": "http",
+							"raw": "{{urlApiProduct}}/api--product/api/product/1",
 							"host": [
-								"localhost"
+								"{{urlApiProduct}}"
 							],
-							"port": "8082",
 							"path": [
+								"api--product",
 								"api",
 								"product",
 								"1"
@@ -173,13 +167,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/api/product/list",
-							"protocol": "http",
+							"raw": "{{urlApiProduct}}/api--product/api/product/list",
 							"host": [
-								"localhost"
+								"{{urlApiProduct}}"
 							],
-							"port": "8082",
 							"path": [
+								"api--product",
 								"api",
 								"product",
 								"list"
@@ -194,13 +187,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/product/list",
-							"protocol": "http",
+							"raw": "{{urlApiProduct}}/api--product/api/product/list",
 							"host": [
-								"localhost"
+								"{{urlApiProduct}}"
 							],
-							"port": "8082",
 							"path": [
+								"api--product",
 								"api",
 								"product",
 								"list"
@@ -224,13 +216,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/api/product/list",
-							"protocol": "http",
+							"raw": "{{urlApiProduct}}/api--product/api/product/list",
 							"host": [
-								"localhost"
+								"{{urlApiProduct}}"
 							],
-							"port": "8082",
 							"path": [
+								"api--product",
 								"api",
 								"product",
 								"list"
@@ -250,13 +241,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/api/order/1",
-							"protocol": "http",
+							"raw": "{{urlApiOrder}}/api--order/api/order/1",
 							"host": [
-								"localhost"
+								"{{urlApiOrder}}"
 							],
-							"port": "8083",
 							"path": [
+								"api--order",
 								"api",
 								"order",
 								"1"
@@ -271,13 +261,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8083/api/order/list/1",
-							"protocol": "http",
+							"raw": "{{urlApiOrder}}/api--order/api/order/list/1",
 							"host": [
-								"localhost"
+								"{{urlApiOrder}}"
 							],
-							"port": "8083",
 							"path": [
+								"api--order",
 								"api",
 								"order",
 								"list",
@@ -302,12 +291,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/api/order/save",
-							"protocol": "http",
+							"raw": "{{urlApiOrder}}/api/order/save",
 							"host": [
-								"localhost"
+								"{{urlApiOrder}}"
 							],
-							"port": "8083",
 							"path": [
 								"api",
 								"order",
@@ -332,13 +319,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8083/api/order/8/status",
-							"protocol": "http",
+							"raw": "{{urlApiOrder}}/api--order/api/order/8/status",
 							"host": [
-								"localhost"
+								"{{urlApiOrder}}"
 							],
-							"port": "8083",
 							"path": [
+								"api--order",
 								"api",
 								"order",
 								"8",
@@ -368,13 +354,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/order/8/status",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/order/8/status",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"order",
 								"8",
@@ -399,13 +384,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/order/save",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/order/save",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"order",
 								"save"
@@ -420,13 +404,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/order/list/1",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/order/list/1",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"order",
 								"list",
@@ -442,13 +425,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/order/1",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/order/1",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"order",
 								"1"
@@ -463,16 +445,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/customer/2",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/customer/1",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"customer",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -484,13 +465,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/customer/1",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/customer/1",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"customer",
 								"1"
@@ -514,13 +494,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/customer/save",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/customer/save",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"customer",
 								"save"
@@ -535,13 +514,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/product/1",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/product/1",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"product",
 								"1"
@@ -556,13 +534,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/product/list",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/product/list",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"product",
 								"list"
@@ -578,7 +555,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"page\": 1,\r\n    \"filter\": \"ACESSORIO\"\r\n}",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"filter\": \"VESTUARIO\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -586,13 +563,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/product/list",
-							"protocol": "http",
+							"raw": "{{urlBff}}/bff--site-shoes/api/product/list",
 							"host": [
-								"localhost"
+								"{{urlBff}}"
 							],
-							"port": "8080",
 							"path": [
+								"bff--site-shoes",
 								"api",
 								"product",
 								"list"
