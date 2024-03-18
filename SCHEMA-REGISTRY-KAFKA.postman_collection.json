@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "be11bbb3-fa37-4194-8ba4-b2f4da873faa",
+		"name": "SCHEMA-REGISTRY-KAFKA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17710409"
+	},
+	"item": [
+		{
+			"name": "/subjects/kfk-order-payment/versions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.schemaregistry.v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"schemaType\":\"JSON\",\r\n     \"schema\": \"{\\\"protocol\\\":\\\"PaymentAvroIDL\\\",\\\"namespace\\\":\\\"com.shoesclick.payment.avro\\\",\\\"types\\\":[{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"PaymentAvro\\\",\\\"fields\\\":[{\\\"name\\\":\\\"order\\\",\\\"type\\\":{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"OrderAvro\\\",\\\"fields\\\":[{\\\"name\\\":\\\"id\\\",\\\"type\\\":\\\"long\\\"},{\\\"name\\\":\\\"status\\\",\\\"type\\\":\\\"int\\\"},{\\\"name\\\":\\\"idCustomer\\\",\\\"type\\\":\\\"long\\\"},{\\\"name\\\":\\\"createdAt\\\",\\\"type\\\":{\\\"type\\\":\\\"int\\\",\\\"logicalType\\\":\\\"date\\\"}},{\\\"name\\\":\\\"orderItems\\\",\\\"type\\\":{\\\"type\\\":\\\"array\\\",\\\"items\\\":{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"OrderItemAvro\\\",\\\"fields\\\":[{\\\"name\\\":\\\"id\\\",\\\"type\\\":\\\"long\\\"},{\\\"name\\\":\\\"idProduct\\\",\\\"type\\\":\\\"long\\\"},{\\\"name\\\":\\\"nameProduct\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"price\\\",\\\"type\\\":\\\"double\\\"}]}}}]}},{\\\"name\\\":\\\"paymentType\\\",\\\"type\\\":\\\"string\\\"},{\\\"name\\\":\\\"paymentParams\\\",\\\"type\\\":{\\\"type\\\":\\\"map\\\",\\\"values\\\":\\\"string\\\"}}]}],\\\"messages\\\":{}}\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/subjects/kfk-order-payment/versions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"subjects",
+						"kfk-order-payment",
+						"versions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/subjects/kfk-order-notification/versions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.schemaregistry.v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"schemaType\":\"JSON\",\r\n    \"schema\": \"{\\\"protocol\\\":\\\"NotificationAvroIDL\\\",\\\"namespace\\\":\\\"com.shoesclick.notification.avro\\\",\\\"types\\\":[{\\\"type\\\":\\\"record\\\",\\\"name\\\":\\\"NotificationAvro\\\",\\\"fields\\\":[{\\\"name\\\":\\\"idOrder\\\",\\\"type\\\":\\\"long\\\"},{\\\"name\\\":\\\"idCustomer\\\",\\\"type\\\":\\\"long\\\"},{\\\"name\\\":\\\"typeTemplate\\\",\\\"type\\\":{\\\"type\\\":\\\"enum\\\",\\\"name\\\":\\\"TemplateEmailAvro\\\",\\\"symbols\\\":[\\\"CREATE_ORDER\\\",\\\"PAYMENT_APPROVED\\\",\\\"PAYMENT_NOT_AUTHORIZED\\\",\\\"PIX_GENERATED\\\",\\\"TICKET_GENERATED\\\"],\\\"default\\\":\\\"CREATE_ORDER\\\"}}]}],\\\"messages\\\":{}}\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/subjects/kfk-order-notification/versions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"subjects",
+						"kfk-order-notification",
+						"versions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/subjects/kfk-order-payment/versions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.schemaregistry.v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/subjects/kfk-order-payment/versions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"subjects",
+						"kfk-order-payment",
+						"versions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/subjects/kfk-order-notification/versions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/vnd.schemaregistry.v1+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/subjects/kfk-order-payment/versions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"subjects",
+						"kfk-order-payment",
+						"versions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
