@@ -74,8 +74,9 @@ services:
       - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
 
   keycloak:
-    image: quay.io/keycloak/keycloak:20.0.2
+    image: quay.io/keycloak/keycloak:21.0
     environment:
+      - KC_HTTP_RELATIVE_PATH=/auth
       - KC_HOSTNAME=localhost
       - KC_HOSTNAME_PORT=7080
       - KC_HOSTNAME_STRICT_BACKCHANNEL=true
