@@ -7,23 +7,101 @@
 	},
 	"item": [
 		{
+			"name": "AUTHENTICATION",
+			"item": [
+				{
+					"name": "Authentication",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "site--shoesclick",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "WrgQYaKuYaDDVjLT3wHis5P9kOnAfjJf",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:7080/auth/realms/shoesclick-site/protocol/openid-connect/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7080",
+							"path": [
+								"auth",
+								"realms",
+								"shoesclick-site",
+								"protocol",
+								"openid-connect",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "CUSTOMER",
 			"item": [
 				{
 					"name": "/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/1",
+							"raw": "{{urlApiCustomer}}/api--customer/api/customer/2",
 							"host": [
 								"{{urlApiCustomer}}"
 							],
 							"path": [
-								"api--constomer",
+								"api--customer",
 								"api",
 								"customer",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -32,15 +110,25 @@
 				{
 					"name": "/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/1",
+							"raw": "{{urlApiCustomer}}/api--customer/api/customer/1",
 							"host": [
 								"{{urlApiCustomer}}"
 							],
 							"path": [
-								"api--constomer",
+								"api--customer",
 								"api",
 								"customer",
 								"1"
@@ -52,15 +140,25 @@
 				{
 					"name": "/list",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/list",
+							"raw": "{{urlApiCustomer}}/api--customer/api/customer/list",
 							"host": [
 								"{{urlApiCustomer}}"
 							],
 							"path": [
-								"api--constomer",
+								"api--customer",
 								"api",
 								"customer",
 								"list"
@@ -72,6 +170,16 @@
 				{
 					"name": "/list",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -84,12 +192,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/list",
+							"raw": "{{urlApiCustomer}}/api--customer/api/customer/list",
 							"host": [
 								"{{urlApiCustomer}}"
 							],
 							"path": [
-								"api--constomer",
+								"api--customer",
 								"api",
 								"customer",
 								"list"
@@ -101,6 +209,16 @@
 				{
 					"name": "/save",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -113,12 +231,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{urlApiCustomer}}/api--constomer/api/customer/save",
+							"raw": "{{urlApiCustomer}}/api--customer/api/customer/save",
 							"host": [
 								"{{urlApiCustomer}}"
 							],
 							"path": [
-								"api--constomer",
+								"api--customer",
 								"api",
 								"customer",
 								"save"
@@ -135,7 +253,47 @@
 				{
 					"name": "/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlApiProduct}}/api--product/api/product/1",
+							"host": [
+								"{{urlApiProduct}}"
+							],
+							"path": [
+								"api--product",
+								"api",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
 						"header": [],
 						"url": {
 							"raw": "{{urlApiProduct}}/api--product/api/product/1",
@@ -155,6 +313,16 @@
 				{
 					"name": "/save",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -184,6 +352,16 @@
 				{
 					"name": "/list",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -204,6 +382,16 @@
 				{
 					"name": "/list",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -238,6 +426,16 @@
 				{
 					"name": "/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -258,6 +456,16 @@
 				{
 					"name": "/list/idCustomer",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -279,11 +487,21 @@
 				{
 					"name": "/save",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"status\": 1,\r\n    \"idCustomer\": 1,\r\n    \"createdAt\": \"2024-01-17T10:11:16.908732\",\r\n    \"paymentType\": \"PIX_PAYMENT\",\r\n    \"paymentParams\": {\r\n        \"value\": \"2000.22\"\r\n    },\r\n    \"orderItems\": [\r\n        {\r\n            \"idProduct\": 1\r\n        },\r\n        {\r\n            \"idProduct\": 3\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"status\": 1,\r\n    \"idCustomer\": 2,\r\n    \"createdAt\": \"2024-03-15T19:41:16.908732\",\r\n    \"paymentType\": \"PIX_PAYMENT\",\r\n    \"paymentParams\": {\r\n        \"value\": \"2000.22\"\r\n    },\r\n    \"orderItems\": [\r\n        {\r\n            \"idProduct\": 1\r\n        },\r\n        {\r\n            \"idProduct\": 3\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -291,11 +509,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{urlApiOrder}}/api/order/save",
+							"raw": "{{urlApiOrder}}/api--order/api/order/save",
 							"host": [
 								"{{urlApiOrder}}"
 							],
 							"path": [
+								"api--order",
 								"api",
 								"order",
 								"save"
@@ -307,6 +526,16 @@
 				{
 					"name": "/id/status",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -342,6 +571,16 @@
 				{
 					"name": "/order/id/status",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -372,11 +611,21 @@
 				{
 					"name": "order/save",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"status\": 1,\r\n    \"idCustomer\": 1,\r\n    \"createdAt\": \"2024-01-17T10:11:16.908732\",\r\n    \"paymentType\": \"PIX_PAYMENT\",\r\n    \"paymentParams\": {\r\n        \"value\": \"2000.22\"\r\n    },\r\n    \"orderItems\": [\r\n        {\r\n            \"idProduct\": 1\r\n        },\r\n        {\r\n            \"idProduct\": 3\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"status\": 1,\r\n    \"idCustomer\": 2,\r\n    \"createdAt\": \"2024-01-17T10:11:16.908732\",\r\n    \"paymentType\": \"PIX_PAYMENT\",\r\n    \"paymentParams\": {\r\n        \"value\": \"2000.22\"\r\n    },\r\n    \"orderItems\": [\r\n        {\r\n            \"idProduct\": 1\r\n        },\r\n        {\r\n            \"idProduct\": 3\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -401,6 +650,16 @@
 				{
 					"name": "/order/list/idCustomer",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -422,6 +681,16 @@
 				{
 					"name": "/order/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -442,10 +711,20 @@
 				{
 					"name": "/customer/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlBff}}/bff--site-shoes/api/customer/1",
+							"raw": "{{urlBff}}/bff--site-shoes/api/customer/2",
 							"host": [
 								"{{urlBff}}"
 							],
@@ -453,7 +732,7 @@
 								"bff--site-shoes",
 								"api",
 								"customer",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -462,6 +741,16 @@
 				{
 					"name": "/customer/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -482,6 +771,16 @@
 				{
 					"name": "/customer/save",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -511,6 +810,16 @@
 				{
 					"name": "/product/id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -531,6 +840,16 @@
 				{
 					"name": "/product/list",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -551,11 +870,21 @@
 				{
 					"name": "/product/list",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"page\": 1,\r\n    \"filter\": \"VESTUARIO\"\r\n}",
+							"raw": "{\r\n    \"page\": 2,\r\n    \"filter\": \"CALCADO\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

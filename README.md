@@ -46,11 +46,24 @@ apidocs-mock.yaml
 
 ## Rodando local
 
-
-**Na pasta raiz do projeto, Rode o docker compose Com o comando abaixo:**
+Va na pasta do projeto provider--shoesckick-login e rode 
+o Comando do Docker file. É necessário gerar o keycloak 
+pois possui o provedor de autenticação customizado.
 
 ```
-docker-compose up
+ docker build -t provider--shoesckick-login .
+```
+
+Após a compilação, volte para pasta deste projeto rode o docker compose contido nesta pasta :
+
+```
+ docker-compose up
+```
+
+Rode o keycloak com a seguinte url:
+
+```
+http://localhost:7080/auth/admin
 ```
 
 **Com o postman, ou outra ferramenta, crie um Mock Server a partir da apidocs.yaml que está na raiz:**
@@ -78,6 +91,9 @@ mvn clean install
 
 **Em uma IDE, inicie a classe Applicaton.java de cada projeto**
 
+Lembre se que os projetos estão configurados na porta 5000, já que 
+a stack é para deploy no kubernetes. portanto altere cada porta
+para executar localmente (do actuator também)
 
 ## Rodando com postman
 
