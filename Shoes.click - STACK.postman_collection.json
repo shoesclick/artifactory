@@ -37,7 +37,7 @@
 								},
 								{
 									"key": "client_secret",
-									"value": "WrgQYaKuYaDDVjLT3wHis5P9kOnAfjJf",
+									"value": "kfiy07MCcynlU49xrxkMnOhKoIKF7VwA",
 									"type": "text"
 								},
 								{
@@ -47,17 +47,21 @@
 								},
 								{
 									"key": "scope",
-									"value": "",
+									"value": "openid",
 									"type": "text",
 									"disabled": true
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:7080/auth/realms/shoesclick-site/protocol/openid-connect/token",
+							"raw": "http://svc-login.ns-login.svc.cluster.local:7080/auth/realms/shoesclick-site/protocol/openid-connect/token",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"svc-login",
+								"ns-login",
+								"svc",
+								"cluster",
+								"local"
 							],
 							"port": "7080",
 							"path": [
@@ -93,7 +97,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlApiCustomer}}/api--customer/api/customer/2",
+							"raw": "{{urlApiCustomer}}/api--customer/api/customer/1",
 							"host": [
 								"{{urlApiCustomer}}"
 							],
@@ -101,7 +105,7 @@
 								"api--customer",
 								"api",
 								"customer",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -223,7 +227,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"MARIA PEREIRA\",\r\n    \"email\": \"maria@email\",\r\n    \"username\": \"maria\",\r\n    \"password\": \"123456\",\r\n    \"address\": {\r\n        \"zipCode\": \"20002-140\",\r\n        \"number\": \"222\",\r\n        \"street\": \"AV PRESIDENTE VARGAS\",\r\n        \"neighborhood\": \"CENTRO\",\r\n        \"state\": \"RJ\",\r\n        \"city\": \"RIO DE JANEIRO\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"JOSE PEREIRA\",\r\n    \"email\": \"jose@email.com\",\r\n    \"username\": \"jose\",\r\n    \"password\": \"123456\",\r\n    \"address\": {\r\n        \"zipCode\": \"20002-140\",\r\n        \"number\": \"222\",\r\n        \"street\": \"AV PRESIDENTE VARGAS\",\r\n        \"neighborhood\": \"CENTRO\",\r\n        \"state\": \"RJ\",\r\n        \"city\": \"RIO DE JANEIRO\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -625,7 +629,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"status\": 1,\r\n    \"idCustomer\": 2,\r\n    \"createdAt\": \"2024-01-17T10:11:16.908732\",\r\n    \"paymentType\": \"PIX_PAYMENT\",\r\n    \"paymentParams\": {\r\n        \"value\": \"2000.22\"\r\n    },\r\n    \"orderItems\": [\r\n        {\r\n            \"idProduct\": 1\r\n        },\r\n        {\r\n            \"idProduct\": 3\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"status\": 1,\r\n    \"idCustomer\": 1,\r\n    \"createdAt\": \"2024-04-18T14:51:16.908732\",\r\n    \"paymentType\": \"PIX_PAYMENT\",\r\n    \"paymentParams\": {\r\n        \"value\": \"2000.22\"\r\n    },\r\n    \"orderItems\": [\r\n        {\r\n            \"idProduct\": 1\r\n        },\r\n        {\r\n            \"idProduct\": 3\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -724,7 +728,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlBff}}/bff--site-shoes/api/customer/2",
+							"raw": "{{urlBff}}/bff--site-shoes/api/customer/1",
 							"host": [
 								"{{urlBff}}"
 							],
@@ -732,7 +736,7 @@
 								"bff--site-shoes",
 								"api",
 								"customer",
-								"2"
+								"1"
 							]
 						}
 					},
