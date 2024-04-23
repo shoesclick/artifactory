@@ -74,7 +74,7 @@ services:
       - KAFKA_CLUSTERS_0_ZOOKEEPER=zookeeper:2181
 
   keycloak:
-    image: provider--shoesckick-login:latest
+    image: provider--shoesclick-login:latest
     environment:
       - KC_HTTP_RELATIVE_PATH=/auth
       - KC_HOSTNAME=localhost
@@ -103,13 +103,16 @@ services:
     depends_on:
       - db-shoes-click
 
-  jaeger:
-    image: jaegertracing/all-in-one:latest
+  zipkin:
+    image: openzipkin/zipkin
+    hostname: zipkin
+    deploy:
+      resources:
+        limits:
+          cpus: '0.3'
+          memory: '0.5GB'
     ports:
-      - 4318:4318
-      - 16686:16686
-    environment:
-      - COLLECTOR_OTLP_ENABLED=true
+      - "9411:9411"
 
 volumes:
 
